@@ -76,6 +76,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'boards.wsgi.application'
 
+LOGIN_REDIRECT_URL = '/'  # Redirect to the home page after login
+LOGOUT_REDIRECT_URL = '/'
+
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
