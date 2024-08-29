@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ board.name }}</h2>
+<p>{{ board.description }}</p>
+<a href="{% url 'new_topic' board.pk %}" class="btn btn-primary">New Topic</a>
+<ul class="list-group mt-3">
+    {% for topic in topics %}
+    <li class="list-group-item">
+        <a href="{% url 'topic_posts' board.pk topic.pk %}">{{ topic.subject }}</a>
+        <small class="text-muted">Last updated {{ topic.last_update }}</small>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

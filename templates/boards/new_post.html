@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Reply to {{ topic.subject }}</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <a href="{% url 'topic_posts' topic.board.pk topic.pk %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
